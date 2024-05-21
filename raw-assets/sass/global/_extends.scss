@@ -1,0 +1,12 @@
+// display flex aligned center
+%flex-center {
+	display: flex;
+	align-items: center;
+}
+
+// align right
+%flex-end {
+	display: flex;
+	align-items: flex-end;
+	justify-content: flex-end;
+}

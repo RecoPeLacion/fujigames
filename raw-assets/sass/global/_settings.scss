@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+$font-inter: "Inter", sans-serif;
+
+$base-font-family: -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", HelveticaNeue, "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", "Sogoe UI", Verdana, "メイリオ", Meiryo, sans-serif;
+$base-font-size: 16;
+$base-font-weight: 300;
+$base-line-height: 180%;
+
+//////////////
+// FONT SIZES
+//////////////
+
+// FS OPTION (em,px)
+$default-fs-option: 'px';
+
+$font-sizes-xs: 18;
+$font-sizes: 20;
+
+//////////////
+// FONT WEIGHTS
+//////////////
+
+$font-weights: 500 600 900;
+
+//////////
+// Colors
+//////////
+
+$primary-color: rgb(175, 175, 202);
+$secondary-color: rgb(153, 17, 17);
+$theme-color: #0091DC;
+$theme-color-dark: #0477B2;
+$white: #fff;
+$green: #2EA378;
+
+//////////////
+// Containers
+//////////////
+
+$default-container: 1400;
+$default-xl-container: 1550;
+$mq_md: 768;
+$mq_sm: 569;
+
+//////////////
+// Padding left & right
+//////////////
+
+$default-pl: 15;
+
+//////////
+// MARGINS
+//////////
+
+// Margin TOP XS
+$margin-top: 0;
+// Margin TOP MD
+$margin-top-md: 0;
+// Margin BOTTOM XS
+$margin-bottom: 0 20 30;
+// Margin BOTTOM MD
+$margin-bottom-md: 0 20;
+
+// global margin top
+$gtop: 100;
+
+//////////
+// PADDINGS
+//////////
+
+// Padding TOP XS
+$padding-top: 0;
+// Padding TOP MD
+$padding-top-md: 0;
+// Padding BOTTOM XS
+$padding-bottom: 0;
+// Padding BOTTOM MD
+$padding-bottom-md: 0;
+
+//////////
+// GAPS & GRIDS
+//////////
+
+// GAP XS
+$gap_xs : 0 10;
+// GAP SM
+$gap_sm : 0;
+// GAP MD
+$gap_md : 0 10 15 20 30 40;
+
+// GRID XS
+$cols_xs : 0 6 12;
+// GRID SM
+$cols_sm : 6 12;
+// GRID MD
+$cols_md : 0 3 4 5 6 7 8 9 12;
+
+
+// SOURCE
+// https://gist.github.com/jareware/4738651 
+// 
+
+///////////
+// DISPLAY
+///////////
+
+// "class name" values
+$display:	"dblock" block, 
+			"diblock" inline-block,
+			"dflex" flex, 
+			"diflex" inline-flex, 
+			"dnone" none;
+
+
+///////////
+// ALIGN
+///////////
+
+// properties "class name" values
+$align: text-align "tc" center,  
+		text-align "tr" right, 
+		align-items "ai" center;
+
+		
+// boxes
+$box: "450" 450px, 
+		"20per" 20%, 
+		"30" 30px;
+
+@each $b in $box {
+	.box-#{nth($b, 1)} {
+		max-width: nth($b, 2);
+	}
+}

@@ -1,0 +1,199 @@
+@mixin mq($range: min, $val: $default-container-md) {
+    @media(#{$range}-width: #{$val}px) {
+        @content;
+    }
+}
+
+
+// breakpoint for iPads
+
+/* Smartphones (portrait and landscape) ----------- */
+@mixin mq_sp() {
+	@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+		@content;
+	}	
+}
+
+
+/* iPads (portrait and landscape) ----------- */
+@mixin mq_ipad() {
+	@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+		@content;
+	}	
+}
+
+/* Large screens ----------- */
+@mixin mq_lg() {
+	@media only screen  and (min-width : 1824px) {
+		@content;
+	}	
+}
+
+
+// style for IE 10+
+@mixin forIE() {
+/* IE 10+ */
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+       @content;
+    }
+}
+
+// style for firefox
+@mixin forFF() {
+	@-moz-document url-prefix() { 
+		@content;
+	}
+}
+
+// enable scroll on IOS phone
+@mixin scroll_IOS() {
+	-webkit-overflow-scrolling: touch;
+}
+
+@mixin txt( $fs: $base-font-size, $lh: $base-line-height, $fw: $base-font-weight ) {
+	@if $default-fs-option == "em" {
+		@include em($fs);
+	}@else{
+		font-size: $fs+px;
+	}
+    line-height: $lh;
+    font-weight: $fw;
+}
+
+// flex size
+@mixin flex_w( $val ) {
+	flex: 0 0 $val;
+	max-width: $val;
+}
+
+/////////////////
+// CUSTOM INPUTS
+////////////////
+
+// for custom select tag
+// parent before and after
+@mixin select_before($bg: #000000, $width: 50px, $height: 100%, $top: 0, $right: 0) {
+	&:before {
+		content: '';
+		display: block;
+		position: absolute;
+		top: $top;
+		right: $top;
+		width: $width;
+		height: $height;
+		background-color: $bg;
+		z-index: 1;
+		pointer-events: none;
+	}
+}
+
+@mixin select_after($arrow_size: 10px, $top: 36%, $right: 20px, $b_color: #ffffff, $b_size: 2px, $rotate: 45deg) {
+	&:after {
+		content: '';
+		position: absolute;
+		top: $top;
+		right: $right;
+		width: $arrow_size;
+		height: $arrow_size;
+		border-right: $b_size solid $b_color;
+		border-bottom: $b_size solid $b_color;
+		transform: rotate($rotate);
+		z-index: 3;
+	}
+}
+
+@mixin select_tag($size: 100%, $display: block, $padxy: 10px 20px, $fs: 1em, $fw: 500, $color: dimgray) {
+	width: $size;
+	display: $display; 
+	padding: $padxy;
+	font-size: $fs;
+	font-weight: $fw;
+	color: $color;
+	appearance: none;
+	cursor: pointer;
+	&:-ms-expand { 
+		display: none; 
+	}
+}
+
+// checkbox
+
+@mixin checkbox_before($before_s: 20px, $before_brder: 2px solid $theme-color) {
+	&:before{
+		content: "";
+		display: inline-block;
+		height: 20px;
+		width: 20px;
+		border: 2px solid $theme-color;   
+	}
+}
+
+@mixin checkbox_after($after_top: -1px, $after_left: 5px,$after_sw: 11px, $after_sh: 7px, $after_bs: 2px, $after_bcolor: #000000, $rotate:-45deg) {
+	&:after {
+		content: "";
+		display: inline-block;
+		position: absolute;
+		top: $after_top;
+		left: $after_left;
+		height: $after_sh;
+		width: $after_sw;
+		border-left: $after_bs solid $after_bcolor;
+		border-bottom: $after_bs solid $after_bcolor;
+		transform: rotate($rotate);
+	}
+}
+
+@mixin checkbox_tag($bcolor: #000000, $bsize: 1px ) {
+	display: none;
+	border: $bsize solid $bcolor;
+	opacity: 0;
+	
+	& + label::after {
+		content: none;
+	}
+	&:checked + label::after {
+		content: "";
+	}
+}
+
+@function strip-unit($value) {
+	@return $value / ($value * 0 + 1);
+}
+  
+@mixin fluid-type($min-vw: 320px, $max-vw: 768px, $min-font-size: 14px, $max-font-size: 30px) {
+	$u1: unit($min-vw);
+	$u2: unit($max-vw);
+	$u3: unit($min-font-size);
+	$u4: unit($max-font-size);
+  
+	@if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+	  & {
+		font-size: $min-font-size;
+		@media screen and (min-width: $min-vw) {
+		  font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+		}
+		@media screen and (min-width: $max-vw) {
+		  font-size: $max-font-size;
+		}
+	  }
+	}
+}
+
+@mixin fluid-lh($min-vw, $max-vw, $min-lh, $max-lh) {
+	$u1: unit($min-vw);
+	$u2: unit($max-vw);
+	$u3: unit($min-lh);
+	$u4: unit($max-lh);
+  
+	@if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+	  & {
+		line-height: $min-lh;
+		@media screen and (min-width: $min-vw) {
+		  line-height: calc(#{$min-lh} + #{strip-unit($max-lh - $min-lh)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+		}
+		@media screen and (min-width: $max-vw) {
+		  line-height: $max-lh;
+		}
+	  }
+	}
+}

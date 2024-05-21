@@ -1,0 +1,69 @@
+.mainFooter {
+    background: rgb(20,136,204);
+    background: linear-gradient(90deg, rgba(20,136,204,1) 0%, rgba(43,50,178,1) 100%);
+}
+
+.mainFooterLogo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+    img {
+        max-width: 365px;
+        width: 100%;
+        @media screen and (max-width: 768px) {
+            max-width: 110px;
+        }
+    }
+}
+
+.mainFooterNav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    @media screen and (max-width: 800px) {
+        gap: 30px;
+    }
+    @media screen and (max-width: 768px) {
+        flex-direction: column;
+        text-align: center;
+    }
+    .nav-link {
+        color: #fff;
+        text-decoration: none;
+        font-family: $font-inter;
+        text-transform: uppercase;
+        font-size: 24px;
+        font-weight: 500;
+        @media screen and (max-width: 800px) {
+            font-size: 18px;
+        }
+        @media screen and (max-width: 768px) {
+            font-size: 14px;
+        }
+    }
+}
+
+.mainFooterNavbar {
+    margin-bottom: 100px;
+}
+
+.mainFooterPrivacy {
+    text-align: center;
+    margin-bottom: 50px;
+    a {
+        color: #fff;
+        text-decoration: none;
+        color: #fff;
+        font-family: $font-inter;
+        font-size: 14px;
+        font-weight: 400;
+    }
+}
+
+.mainFooterCopyright {
+    text-align: center;
+    color: #fff;
+    font-family: $font-inter;
+}

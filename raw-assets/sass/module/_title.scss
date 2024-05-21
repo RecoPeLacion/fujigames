@@ -1,0 +1,25 @@
+.themeTitle {
+    margin-bottom: 60px;
+    @media screen and (max-width: 768px) {
+        margin-bottom: 30px;
+    }
+    h3 {
+        background: -webkit-linear-gradient(#005C97, #363795);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-family: $font-inter;
+        font-size: 92px;
+        font-weight: 700;
+        line-height: normal;
+        @media screen and (max-width: 768px) {
+            font-size: 34px;
+        }
+    }
+    p {
+        color: #005C97;
+        font-weight: 700;
+        @media screen and (max-width: 768px) {
+            font-size: 10px;
+        }
+    }
+}
