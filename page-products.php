@@ -57,16 +57,16 @@ get_header();
         <div class="themeProductsButtons">
             <ul class="themeProductsButtonsList">
                 <li>
-                    <a href="#"><span>DX支援</span></a>
+                    <a href="#item1"><span>DX支援</span></a>
                 </li>
                 <li>
-                    <a href="#"><span>業務システム開発</span></a>
+                    <a href="#item2"><span>業務システム開発</span></a>
                 </li>
                 <li>
-                    <a href="#"><span>Web/アプリ開発</span></a>
+                    <a href="#item3"><span>Web/アプリ開発</span></a>
                 </li>
                 <li>
-                    <a href="#"><span>ゲーム開発</span></a>
+                    <a href="#item4"><span>ゲーム開発</span></a>
                 </li>
                 <li>
                     <a href="#"><span>マーケティング</span></a>
@@ -74,7 +74,7 @@ get_header();
             </ul>
         </div>
         <div class="themeProductsWrap">
-            <div class="themeProductsWrapItem">
+            <div id="item1" class="themeProductsWrapItem">
                 <div class="themeProductsWrapRow">
                     <div class="themeProductsWrapCol">
                         <div class="themeProductsWrapContent">
@@ -147,7 +147,7 @@ get_header();
                     </div>
                 </div>
             </div>
-            <div class="themeProductsWrapItem themeProductsWrapItemReverse">
+            <div id="item2" class="themeProductsWrapItem themeProductsWrapItemReverse">
                 <div class="themeProductsWrapRow">
                     <div class="themeProductsWrapCol">
                         <div class="themeProductsWrapImg vPc">
@@ -220,7 +220,7 @@ get_header();
                     </div>
                 </div>
             </div>
-            <div class="themeProductsWrapItem">
+            <div id="item3" class="themeProductsWrapItem">
                 <div class="themeProductsWrapRow">
                     <div class="themeProductsWrapCol">
                         <div class="themeProductsWrapContent">
@@ -294,7 +294,7 @@ get_header();
                     </div>
                 </div>
             </div>
-            <div class="themeProductsWrapItem themeProductsWrapItemReverse">
+            <div id="item4" class="themeProductsWrapItem themeProductsWrapItemReverse">
                 <div class="themeProductsWrapRow">
                     <div class="themeProductsWrapCol">
                         <div class="themeProductsWrapImg vPc">

@@ -57,16 +57,16 @@ get_header();
         <div class="themeProductsButtons">
             <ul class="themeProductsButtonsList">
                 <li>
-                    <a href="#"><span>DX支援</span></a>
+                    <a href="#item1"><span>DX支援</span></a>
                 </li>
                 <li>
-                    <a href="#"><span>業務システム開発</span></a>
+                    <a href="#item2"><span>業務システム開発</span></a>
                 </li>
                 <li>
-                    <a href="#"><span>Web/アプリ開発</span></a>
+                    <a href="#item3"><span>Web/アプリ開発</span></a>
                 </li>
                 <li>
-                    <a href="#"><span>ゲーム開発</span></a>
+                    <a href="#item4"><span>ゲーム開発</span></a>
                 </li>
                 <li>
                     <a href="#"><span>マーケティング</span></a>
@@ -74,7 +74,7 @@ get_header();
             </ul>
         </div>
         <div class="themeProductsWrap">
-            <div class="themeProductsWrapItem">
+            <div id="item1" class="themeProductsWrapItem">
                 <div class="themeProductsWrapRow">
                     <div class="themeProductsWrapCol">
                         <div class="themeProductsWrapContent">
@@ -126,7 +126,7 @@ get_header();
                         ?>
                         <?php if( $my_query -> have_posts() ) : while($my_query -> have_posts()) : $my_query -> the_post(); ?>
                             <li id="post-<?php the_ID(); ?>">
-                                <div class="themeProductsCaseCard">
+                                <a href="<?php the_permalink(); ?>" class="themeProductsCaseCard">
                                     <div class="themeProductsCaseImg">
                                         <?php if(has_post_thumbnail()): ?>
                                             <?php
@@ -138,7 +138,7 @@ get_header();
                                             <img src="<?php echo get_template_directory_uri(); ?>/assets/img/slider03.png" alt="Fuji Games">
                                         <?php endif; ?>
                                     </div>
-                                </div>
+                                </a>
                             </li>
                         <?php endwhile; endif; ?>
                     </ul>
@@ -147,7 +147,7 @@ get_header();
                     </div>
                 </div>
             </div>
-            <div class="themeProductsWrapItem themeProductsWrapItemReverse">
+            <div id="item2" class="themeProductsWrapItem themeProductsWrapItemReverse">
                 <div class="themeProductsWrapRow">
                     <div class="themeProductsWrapCol">
                         <div class="themeProductsWrapImg vPc">
@@ -199,7 +199,7 @@ get_header();
                         ?>
                         <?php if( $my_query -> have_posts() ) : while($my_query -> have_posts()) : $my_query -> the_post(); ?>
                             <li id="post-<?php the_ID(); ?>">
-                                <div class="themeProductsCaseCard">
+                                <a href="<?php the_permalink(); ?>" class="themeProductsCaseCard">
                                     <div class="themeProductsCaseImg">
                                         <?php if(has_post_thumbnail()): ?>
                                             <?php
@@ -211,7 +211,7 @@ get_header();
                                             <img src="<?php echo get_template_directory_uri(); ?>/assets/img/slider03.png" alt="Fuji Games">
                                         <?php endif; ?>
                                     </div>
-                                </div>
+                                </a>
                             </li>
                         <?php endwhile; endif; ?>
                     </ul>
@@ -220,7 +220,7 @@ get_header();
                     </div>
                 </div>
             </div>
-            <div class="themeProductsWrapItem">
+            <div id="item3" class="themeProductsWrapItem">
                 <div class="themeProductsWrapRow">
                     <div class="themeProductsWrapCol">
                         <div class="themeProductsWrapContent">
@@ -273,7 +273,7 @@ get_header();
                         ?>
                         <?php if( $my_query -> have_posts() ) : while($my_query -> have_posts()) : $my_query -> the_post(); ?>
                             <li id="post-<?php the_ID(); ?>">
-                                <div class="themeProductsCaseCard">
+                                <a href="<?php the_permalink(); ?>" class="themeProductsCaseCard">
                                     <div class="themeProductsCaseImg">
                                         <?php if(has_post_thumbnail()): ?>
                                             <?php
@@ -285,7 +285,7 @@ get_header();
                                             <img src="<?php echo get_template_directory_uri(); ?>/assets/img/slider03.png" alt="Fuji Games">
                                         <?php endif; ?>
                                     </div>
-                                </div>
+                                </a>
                             </li>
                         <?php endwhile; endif; ?>
                     </ul>
@@ -294,7 +294,7 @@ get_header();
                     </div>
                 </div>
             </div>
-            <div class="themeProductsWrapItem themeProductsWrapItemReverse">
+            <div id="item4" class="themeProductsWrapItem themeProductsWrapItemReverse">
                 <div class="themeProductsWrapRow">
                     <div class="themeProductsWrapCol">
                         <div class="themeProductsWrapImg vPc">
@@ -346,7 +346,7 @@ get_header();
                         ?>
                         <?php if( $my_query -> have_posts() ) : while($my_query -> have_posts()) : $my_query -> the_post(); ?>
                             <li id="post-<?php the_ID(); ?>">
-                                <div class="themeProductsCaseCard">
+                                <a href="<?php the_permalink(); ?>" class="themeProductsCaseCard">
                                     <div class="themeProductsCaseImg">
                                         <?php if(has_post_thumbnail()): ?>
                                             <?php
@@ -358,7 +358,7 @@ get_header();
                                             <img src="<?php echo get_template_directory_uri(); ?>/assets/img/slider03.png" alt="Fuji Games">
                                         <?php endif; ?>
                                     </div>
-                                </div>
+                                </a>
                             </li>
                         <?php endwhile; endif; ?>
                     </ul>

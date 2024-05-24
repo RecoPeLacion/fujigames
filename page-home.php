@@ -195,7 +195,7 @@ get_header();
                 while ($wp_query->have_posts()) : $wp_query->the_post();
                     ?>
                     <li class="themeCaseListItem">
-                        <div class="themeCaseListCard">
+                        <a href="<?php the_permalink(); ?>" class="themeCaseListCard">
                             <div class="themeCaseListImg">
                                 <?php if(has_post_thumbnail()): ?>
                                     <?php
@@ -220,7 +220,7 @@ get_header();
                                 </span>
                                 <p><?php the_title(); ?></p>
                             </div>
-                        </div>
+                        </a>
                     </li>
                 <?php endwhile; ?>
             </ul>
@@ -305,6 +305,9 @@ get_header();
                 wp_reset_postdata();
                 ?>
             </ul>
+        </div>
+        <div class="themeButton">
+            <a href="<?php bloginfo('url'); ?>/news">ニュース一覧</a>
         </div>
     </div>
 </section>
