@@ -105,6 +105,21 @@
       $('.mainHeaderNavWrap').toggleClass('openMenu')
     })
 
+    // input change color
+    $('.themeContactFormRadio input').on('change', function() {
+    $('.themeContactFormRadio input').each(function() {
+      const labelSpan = $(this).next('span');
+      if ($(this).is(':checked')) {
+          labelSpan.addClass('checked-label');
+      } else {
+          labelSpan.removeClass('checked-label');
+      }
+    });
+    });
+
+    // Trigger change event on page load to apply class to the initially checked radio button
+    $('.themeContactFormRadio input:checked').trigger('change');
+
 })(jQuery);
 
 document.addEventListener( 'wpcf7mailsent', function( event ) {

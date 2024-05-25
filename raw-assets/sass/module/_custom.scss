@@ -837,6 +837,16 @@
         .wpcf7-list-item {
             margin-left: 0;
             position: relative;
+            &::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                top: 0;
+                border: 1px solid #363795;
+                border-radius: 25px;
+            }
             input {
                 position: absolute;
                 opacity: 0;
@@ -876,18 +886,11 @@
             cursor: pointer;
             z-index: 1;
             color: #000;
+            &.checked-label {
+                color: #fff;
+            }
             @media screen and (max-width: 768px) {
                 width: 100%;
-            }
-            &::before {
-                content: "";
-                position: absolute;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                top: 0;
-                border: 1px solid #000;
-                border-radius: 25px;
             }
         }
     }
